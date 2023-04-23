@@ -162,7 +162,7 @@ def build_line(func, n=15, ndim=2, block_size=28, verbose=1,point_based_tree = T
     tree = Tree(data, block_size, point_based_tree = point_based_tree, num_child_tree = num_child_tree)
     problem = Problem(func, tree, verbose%2)
     return problem
-def build_problem(geom_type='cube',block_size=26, n=15, ndim = 2, func = test_funcs.log_distance, point_based_tree=0, close_r = 1., num_child_tree='hyper', random_points=1, file = None, eps = 0.51e-6, zk = 1.1 + 1j*0, alpha = 3.0, beta = 0, wtd_T=0,add_up_level_close=0,half_sym=0,csc_fun=0,q_fun=0,ifwrite=0, nu=10, order=10):
+def build_problem(geom_type='cube',block_size=26, n=15, ndim = 2, func = None, point_based_tree=0, close_r = 1., num_child_tree='hyper', random_points=1, file = None, eps = 0.51e-6, zk = 1.1 + 1j*0, alpha = 3.0, beta = 0, wtd_T=0,add_up_level_close=0,half_sym=0,csc_fun=0,q_fun=0,ifwrite=0, nu=10, order=10):
     iters = 2
     onfly = 1
     verbose = 0
