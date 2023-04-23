@@ -138,7 +138,7 @@ def build_cube_problem(func, n=15, ndim=2, block_size=28, verbose=1,point_based_
             position = np.vstack((x0.reshape(1,n**ndim),x1.reshape(1,n**ndim), x2.reshape(1,n**ndim)))
 
     data = Data(ndim, count, position, close_r=close_r)
-    if func == test_funcs.exp_distance_h2t:
+    if func == None:
         data.k = zk
     tree = Tree(data, block_size, point_based_tree = point_based_tree, num_child_tree = num_child_tree)
     problem = Problem(func, tree, verbose%2)
@@ -157,7 +157,7 @@ def build_line(func, n=15, ndim=2, block_size=28, verbose=1,point_based_tree = T
             x0, x1, x2 = np.meshgrid(np.arange(1,n+1)/(n),np.arange(1,n+1)/n, np.arange(1,n+1)/(n))
             position = np.vstack((x0.reshape(1,n**ndim),x1.reshape(1,n**ndim), x2.reshape(1,n**ndim)))
     data = Data(ndim, count, position, close_r=close_r)
-    if func == test_funcs.exp_distance_h2t:
+    if func == None:
         data.k = zk
     tree = Tree(data, block_size, point_based_tree = point_based_tree, num_child_tree = num_child_tree)
     problem = Problem(func, tree, verbose%2)
@@ -247,7 +247,7 @@ def build_sphere(func, n=15, ndim=3, block_size=28, verbose=1,point_based_tree =
         raise NameError ('Duplocated points!')
 
     data = Data(ndim, count, position, close_r=close_r)
-    if func == test_funcs.exp_distance_h2t:
+    if func == None:
         data.k = zk
     tree = Tree(data, block_size, point_based_tree = point_based_tree, num_child_tree = num_child_tree)
     problem = Problem(func, tree, verbose%2)
