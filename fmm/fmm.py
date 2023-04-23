@@ -10,7 +10,7 @@ from scipy.linalg.blas import dgemm
 
 from problem_tools.geometry_tools import Data, Tree
 from problem_tools.problem import Problem
-from functions import test_funcs
+# from functions import test_funcs
 from numba import jit
 from scipy.linalg.interpolative import interp_decomp
 from scipy.sparse import csc_matrix as csc
