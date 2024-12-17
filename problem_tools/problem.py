@@ -4,7 +4,7 @@ from collections import defaultdict
 from itertools import product
 from numba import jit
 class Problem(object):
-    def __init__(self, func, tree,  verbose=False):
+    def __init__(self, func, tree,  verbose=False, build=1):
         self._func = func
         # self.symmetric = symmetric
         self.tree = tree
@@ -14,7 +14,8 @@ class Problem(object):
         tmp = self.func(l, l)
         self.func_shape = tmp.shape[1:-1]
         self.dtype = tmp.dtype
-        self._build(verbose)
+        if build:
+            self._build(verbose)
 
     def _build(self, verbose=False):
         row_check = [[0]]
